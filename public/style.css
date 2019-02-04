@@ -1,0 +1,215 @@
+:root {
+  --dark-blue: #3a4b56;
+  --light-blue: #c7d6d5;
+  --pink: #d44a8e;
+
+}
+body {
+  text-transform: uppercase;
+  font-family: "Avenir Next", Helvetica, sans-serif;
+  background: var(--dark-blue);
+  font-size: 2rem;
+}
+
+.hidden {
+  background: var(--dark-blue);
+  border: none;
+  width: 50%;
+}
+
+.small-cell-hidden {
+  width: 3%;
+}
+
+/* Header shit */
+.table-header-rotated th.rotate-45{
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 170px;
+  width: 3%;
+  min-width: 5%;
+  max-width: 5%;
+  position: relative;
+  vertical-align: bottom;
+  padding: 0;
+}
+#abv-head {
+  width: 5%;
+}
+.table-header-rotated th.rotate-45 > div{
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 39px;
+  height: 100%;
+  background: var(--light-blue);
+  -ms-transform:skew(-25deg,0deg);
+  -moz-transform:skew(-25deg,0deg);
+  -webkit-transform:skew(-25deg,0deg);
+  -o-transform:skew(-25deg,0deg);
+  transform:skew(-25deg,0deg);
+  overflow: hidden;
+  border-left: 2px solid var(--pink);
+  border-right: 2px solid var(--pink);
+  border-top: none;
+  border-bottom: 1px solid var(--dark-blue);
+}
+
+.table-header-rotated th.rotate-45 span {
+  -ms-transform:skew(25deg,0deg) rotate(-65deg);
+  -moz-transform:skew(25deg,0deg) rotate(-65deg);
+  -webkit-transform:skew(25deg,0deg) rotate(-65deg);
+  -o-transform:skew(25deg,0deg) rotate(-65deg);
+  transform:skew(25deg,0deg) rotate(-65deg);
+  position: absolute;
+  bottom: 30px;
+  left: -30%; 
+  display: inline-block;
+  width: 85px; 
+  text-align: left;
+}
+
+#abv-head span {
+  left: -5%;
+}
+/* end header shit */
+
+h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 6rem;
+  letter-spacing: 3px;
+  margin: 0;
+  text-align: center;
+}
+
+.tagline h1 {
+  display: inline;
+
+}
+
+img {
+  display: inline;
+  width: 40px;
+  height: 50px;
+}
+.container {
+  max-width: 100%;
+}
+.header {
+  position: absolute;
+  left: 30%;
+  top: 5%;
+}
+
+.hoppy, .malty, .nitro, .weird, .id, .price-growler, .price-taster, .price-tenoz, .price-pint, .abv {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+table {
+  table-layout: fixed;
+  color: var(--dark-blue);
+  width: 100%;
+  border: none;
+}
+.data {
+  background: var(--light-blue);
+}
+
+.data td {
+  border-right: 1px solid var(--pink);
+  border-left: 1px solid var(--pink);
+  border-bottom: 1px solid var(--dark-blue);
+}
+
+.dot-filled {
+  width: 10px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px auto;
+  text-align: center;
+  background: #3a4b56;
+}
+
+.dot-empty {
+  width: 10px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px auto;
+  text-align: center;
+  border: 2px solid #3a4b56;
+}
+
+.tap-handle {
+  background: none;
+}
+
+.tap-square {
+  width: 10px;
+  height: 10px;
+  background: blue;
+}
+td {
+  margin: auto;
+  text-align: center;
+}
+
+.beer-name {
+  float: left;
+  font-weight: 700;
+}
+
+.beer-type {
+  float: right;
+  font-style: italic;
+}
+
+.beer-desc {
+  width: 50%;
+  letter-spacing: 3px;
+  padding: 5px 15px;
+  font-size: 2rem;
+}
+
+label {
+  color: var(--dark-blue);
+}
+
+input {
+  display: block;
+}
+
+.main-form {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 50px;
+  background: var(--light-blue);
+  margin: 25px;
+  border-radius: 1rem;
+
+}
+
+.main-form div {
+    padding: 5px;
+}
+
+input[type="text"]
+{
+  border: 1px solid var(--pink);
+  padding: 6px;
+  width:100%;
+}
+
+.checkboxes input {
+  margin-left: 15px;
+  margin-right: 25px;
+  display: inline;
+}
+
+#tap-color input {
+  padding: 1px;
+}
+

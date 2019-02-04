@@ -1,0 +1,73 @@
+<html>
+    <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+      <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    </head>
+  <body>
+    <div class="container">
+      <h1> Add a beer </h1>
+      <div class="main-body main-form"
+        <form method="POST" action="/pour">
+          <div>
+            <label for="name">Beer Name</label>
+            <input type="text", name="name">
+          </div>
+
+          <div>
+            <label for="desc">Beer Description</label>
+            <input type="text", name="desc">
+          </div>
+
+          <div class="checkboxes">
+            <label for="hoppy">Hoppy</label>
+            <input type="checkbox", name="hoppy">
+
+            <label for="malty">Malty</label>
+            <input type="checkbox", name="malty">
+
+            <label for="nitro">Nitro</label>
+            <input type="checkbox", name="nitro">
+
+            <label for="weird">Weird</label>
+            <input type="checkbox", name="weird">
+          </div>
+
+
+          <div>
+            <label for="abv">ABV</label>
+            <input type="text", name="abv">
+          </div>
+
+          <div>
+            <label for="growler">Growler Price</label>
+            <input type="text", name="growler">
+          </div>
+
+          <div>
+            <label for="taster">Taster Price</label>
+            <input type="text", name="taster">
+          </div>
+
+          <div>
+            <label for="tenoz">10 oz Price</label>
+            <input type="text", name="tenoz">
+          </div>
+
+          <div>
+            <label for="pint">Pint Price</label>
+            <input type="text", name="pint">
+          </div>
+
+          <div id="tap-color">
+            <label for="tap">Tap Color</label>
+            <input type="color" name="tap1" value="#ff0000">
+            <input type="color" name="tap2">
+          </div>
+          <br/>
+          <br/>
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

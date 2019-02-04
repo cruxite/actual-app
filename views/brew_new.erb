@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+  <div class="container">
+    <div class="header">
+
+      <span class="tagline">
+        <h1> Actual Beer </h1>
+        <img src="<%= url('/actual.png') %>" />
+      </span>
+
+    </div>
+    <div class="main-body">
+      <table class="table-header-rotated">
+        <tr>
+          <th class="hidden small-cell-hidden"/>
+          <th class="rotate-45">
+            <div>
+              <span>
+                Hoppy
+              </span>
+            </div>
+          </th>
+          <th class="rotate-45">
+            <div> 
+              <span>
+                Malty
+              </span>
+            </div>
+          <th class="rotate-45">
+            <div>
+              <span>
+                Nitro
+              </span>
+            </div>
+          </th>
+          <th class="rotate-45">
+            <div> 
+              <span>
+                Weird
+              </span>
+            </div>
+          </th>
+          <th class="rotate-45" id="abv-head">
+            <div> 
+              <span>
+                ABV
+              </span>
+            </div>
+          </th>
+        <th class="hidden"/>
+        <th class="rotate-45">
+            <div> 
+              <span>
+                Growler
+              </span>
+            </div>
+          </th>
+        <th class="rotate-45">
+            <div>
+              <span>
+                Taster
+              </span>
+            </div>
+          </th>
+        <th class="rotate-45">
+            <div>
+              <span>
+                10 oz
+              </span>
+            </div>
+          </th>
+        <th class="rotate-45">
+            <div> 
+              <span>
+                Pint
+              </span>
+            </div>
+          </th>
+        <th class="hidden small-cell-hidden"/>
+        </tr>
+        <!-- end header -->
+
+      <% if !@beers.nil? %>
+        <% @beers.each_with_index do |beer, i| %>
+          <tr class="data">
+            <td class="id">
+              <%= i %>
+            </td>
+
+            <td class="hoppy">
+              <% if beer[:hoppy] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="malty">
+              <% if beer[:malty] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="nitro"> 
+              <% if beer[:nitro] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class=weird>
+              <% if beer[:weird] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="abv">
+              <%= beer[:abv].present? ? beer[:abv] : "-" %>
+            </td>
+
+            <td class="beer-desc">
+              <span class="beer-name">
+                <%= beer[:name].present? ? beer[:name] : "-" %>
+              </span>
+              <span class="beer-type">
+                <%= beer[:desc].present? ? beer[:desc] : "-" %>
+              </span>
+            </td>
+
+            <td class="price-growler">
+              <%= beer[:growler].present? ? beer[:growler] : "-" %>
+            </td>
+
+            <td class="price-taster">
+              <%= beer[:taster].present? ? beer[:taster] : "-" %>
+            </td>
+
+            <td class="price-tenoz">
+              <%= beer[:tenoz].present? ? beer[:tenoz] : "-" %>
+            </td>
+
+            <td class="price-pint">
+              <%= beer[:pint].present? ? beer[:pint] : "-" %>
+            </td>
+
+            <td class="tap-handle">
+              <span class="tap-square"></span>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <% if @beers.nil? or @beers.size < 20 %>
+        <% (20).times do |y| %>
+        <!-- generate empty table -->
+         <tr class="data">
+            <td class="id">
+              <%= y + 1 %>
+            </td>
+            <td class="hoppy"></td>
+            <td class="malty"></td>
+            <td class="nitro"></td>
+            <td class="weird"></td>
+            <td class="abv"></td>
+            <td class="beer-desc"></td>
+            <td class="price-growler"></td>
+            <td class="price-taster"></td>
+            <td class="price-tenoz"></td>
+            <td class="price-pint"></td>
+            <td class="tap-handle"></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
