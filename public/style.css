@@ -22,10 +22,10 @@ body {
 }
 
 /* Header shit */
-.table-header-rotated th.rotate-45{
+.table-header-rotated th.rotate-45 {
   font-size: 1.5rem;
   font-weight: 500;
-  height: 170px;
+  height: 150px;
   width: 3%;
   min-width: 5%;
   max-width: 5%;
@@ -33,6 +33,7 @@ body {
   vertical-align: bottom;
   padding: 0;
 }
+
 #abv-head {
   width: 5%;
 }
@@ -40,7 +41,7 @@ body {
   width: 100%;
   position: relative;
   top: 0px;
-  left: 39px;
+  left: 33px;
   height: 100%;
   background: var(--light-blue);
   -ms-transform:skew(-25deg,0deg);
@@ -49,10 +50,10 @@ body {
   -o-transform:skew(-25deg,0deg);
   transform:skew(-25deg,0deg);
   overflow: hidden;
-  border-left: 2px solid var(--pink);
+  border-left: 3px solid var(--pink);
   border-right: 2px solid var(--pink);
   border-top: none;
-  border-bottom: 1px solid var(--dark-blue);
+  border-bottom: 3px solid var(--dark-blue);
 }
 
 .table-header-rotated th.rotate-45 span {
@@ -85,7 +86,6 @@ h1 {
 
 .tagline h1 {
   display: inline;
-
 }
 
 img {
@@ -93,6 +93,7 @@ img {
   width: 40px;
   height: 50px;
 }
+
 .container {
   max-width: 100%;
 }
@@ -113,14 +114,15 @@ table {
   width: 100%;
   border: none;
 }
+
 .data {
   background: var(--light-blue);
 }
 
 .data td {
   border-right: 1px solid var(--pink);
-  border-left: 1px solid var(--pink);
-  border-bottom: 1px solid var(--dark-blue);
+  border-left: 2px solid var(--pink);
+  border-bottom: 3px solid var(--dark-blue);
 }
 
 .dot-filled {
@@ -140,11 +142,12 @@ table {
   padding: 3px;
   margin: 3px auto;
   text-align: center;
-  border: 2px solid #3a4b56;
+  border: 3px solid #3a4b56;
 }
 
 .tap-handle {
-  background: none;
+  background: var(--dark-blue)!important;
+  border: none!important;
 }
 
 .tap-square {
@@ -152,6 +155,7 @@ table {
   height: 10px;
   background: blue;
 }
+
 td {
   margin: auto;
   text-align: center;
@@ -172,10 +176,16 @@ td {
   letter-spacing: 3px;
   padding: 5px 15px;
   font-size: 2rem;
+  font-weight: 500;
 }
 
 label {
   color: var(--dark-blue);
+}
+
+.id {
+  padding: 10px;
+  font-size: 1.5rem; 
 }
 
 input {

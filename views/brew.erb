@@ -14,7 +14,7 @@
 
     </div>
     <div class="main-body">
-      <table class="table-header-rotated">
+      <table class="table-header-rotated" cellspacing="0" cellpadding="0">
         <tr>
           <th class="hidden small-cell-hidden"/>
           <th class="rotate-45">
@@ -82,124 +82,104 @@
           </th>
         <th class="hidden small-cell-hidden"/>
         </tr>
-        <!-- end header --!>
-        <tr class="data 1">
-          <td class="id">
-            1
-          </td>
-          <td class="hoppy">
-            <div class="dot-empty"></div>
-          </td>
-          <td class="malty">
-            <div class="dot-empty"></div>
-          </td>
-          <td class="nitro"> 
-            <div class="dot-filled"></div>
-          </td> 
-          <td class=weird>
-            <div class="dot-filled"></div>
-          </td>
-          <td class="abv">
-            3.4
-          </td>
-          <td class="beer-desc">
-            <span class="beer-name"> Photon </span>
-            <span class="beer-type"> Light Lager </span>
-          </td>
-          <td class="price-growler">
-            8
-          </td>
-          <td class="price-taster">
-            2
-          </td>
-          <td class="price-tenoz">
-            3
-          </td>
-          <td class="price-pint">
-            4
-          </td>
-          <td class="tap-handle">
-            <span class="tap-square"></span>
-          </td>
-        </tr>
-        <tr class="data 2">
-          <td class="id">
-            2
-          </td>
-          <td class="hoppy">
-            <div class="dot-empty"></div>
-          </td>
-          <td class="malty">
-            <div class="dot-filled"></div>
-          </td>
-          <td class="nitro"> 
-            <div class="dot-filled"></div>
-          </td> 
-          <td class=weird>
-            <div class="dot-filled"></div>
-          </td>
-          <td class="abv">
-            5.6
-          </td>
-          <td class="beer-desc">
-            <span class="beer-name"> Luxon </span>
-            <span class="beer-type"> Golden Saison </span>
-          </td>
-          <td class="price-growler">
-            12
-          </td>
-          <td class="price-taster">
-            3
-          </td>
-          <td class="price-tenoz">
-            5
-          </td>
-          <td class="price-pint">
-            8
-          </td>
-          <td class="tap-handle">
-            <span class="tap-square"></span>
-          </td>
-        </tr>
-        <tr class="data 3">
-          <td class="id">
-            3
-          </td>
-          <td class="hoppy">
-            <div class="dot-empty"></div>
-          </td>
-          <td class="malty">
-            <div class="dot-empty"></div>
-          </td>
-          <td class="nitro"> 
-            <div class="dot-empty"></div>
-          </td> 
-          <td class=weird>
-            <div class="dot-filled"></div>
-          </td>
-          <td class="abv">
-            5.6
-          </td>
-          <td class="beer-desc">
-            <span class="beer-name"> Magnon </span>
-            <span class="beer-type"> India Pale Ale </span>
-          </td>
-          <td class="price-growler">
-            10
-          </td>
-          <td class="price-taster">
-            2
-          </td>
-          <td class="price-tenoz">
-            5
-          </td>
-          <td class="price-pint">
-            8
-          </td>
-          <td class="tap-handle">
-            <span class="tap-square"></span>
-          </td>
-        </tr>
+        <!-- end header -->
+
+      <% if !@beers.nil? %>
+        <% @beers.each_with_index do |beer, i| %>
+          <tr class="data">
+            <td class="id">
+              <%= i %>
+            </td>
+
+            <td class="hoppy">
+              <% if beer[:hoppy] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="malty">
+              <% if beer[:malty] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="nitro"> 
+              <% if beer[:nitro] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class=weird>
+              <% if beer[:weird] == true %>
+                <div class="dot-empty"></div>
+              <% else %>
+                <div class="dot-filled"></div>
+              <% end %>
+            </td>
+
+            <td class="abv">
+              <%= beer[:abv].present? ? beer[:abv] : "-" %>
+            </td>
+
+            <td class="beer-desc">
+              <span class="beer-name">
+                <%= beer[:name].present? ? beer[:name] : "-" %>
+              </span>
+              <span class="beer-type">
+                <%= beer[:desc].present? ? beer[:desc] : "-" %>
+              </span>
+            </td>
+
+            <td class="price-growler">
+              <%= beer[:growler].present? ? beer[:growler] : "-" %>
+            </td>
+
+            <td class="price-taster">
+              <%= beer[:taster].present? ? beer[:taster] : "-" %>
+            </td>
+
+            <td class="price-tenoz">
+              <%= beer[:tenoz].present? ? beer[:tenoz] : "-" %>
+            </td>
+
+            <td class="price-pint">
+              <%= beer[:pint].present? ? beer[:pint] : "-" %>
+            </td>
+
+            <td class="tap-handle">
+              <i class="tap-square"></i>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <!-- Begin placeholders -->
+      <% if @beers.nil? or @beers.size < @generations %>
+        <% (@generations - @beers.size).times do |y| %>
+        <!-- generate empty table -->
+         <tr class="data">
+            <td class="id">
+              <%= y + 1 %>
+            </td>
+            <td class="hoppy"></td>
+            <td class="malty"></td>
+            <td class="nitro"></td>
+            <td class="weird"></td>
+            <td class="abv"></td>
+            <td class="beer-desc"></td>
+            <td class="price-growler"></td>
+            <td class="price-taster"></td>
+            <td class="price-tenoz"></td>
+            <td class="price-pint"></td>
+            <td class="tap-handle"></td>
+          </tr>
+        <% end %>
+      <% end %>
       </table>
     </div>
   </div>

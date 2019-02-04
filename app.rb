@@ -1,4 +1,12 @@
 require 'sinatra'
+require 'csv'
+
+before do
+  Beer = Struct.new(:name, :hoppy, :malty, :nitro, :weird, :desc, :abv, :growler, :taster, :tenoz, :pint, :tap1, :tap2)
+  @beers = []
+  @generations = 12
+  #@db = CSV.open("beer.csv", "wb")
+end
 
 get '/' do
   erb :brew
@@ -9,33 +17,38 @@ get '/' do
   #end
 end
 
-get '/test-brew' do
-  @beers = [
-    { name: "test" }
-  ]
- erb :brew_new
-end
-
 post '/pour' do
 
-  @beer = {
-    name: params[:name],
-    hoppy: params[:hoppy],
-    malty: params[:malty],
-    nitro: params[:nitro],
-    weird: params[:weird],
-    desc: params[:desc],
-    abv: params[:abv],
-    growler: params[:growler],
-    taster: params[:taster],
-    tenoz: params[:tenoz],
-    pint: params[:pint],
-    tap1: params[:tap1],
-    tap2: params[:tap2]
-  }
+  # create a beer from params
+  @beer = Beer.new(
+    params[:name], 
+    params[:hoppy], 
+    params[:malty], 
+    params[:nitro], 
+    params[:weird],
+    params[:desc],
+    params[:abv],
+    params[:growler],
+    params[:taster],
+    params[:tenoz],
+    params[:pint],
+    params[:tap1],
+    params[:tap2]
+  )
 
-  erb :brew_new
+  # define number of generations we want as placeholders, otherwise we go with 12.
+  @generations = params[:generations] unless params[:generations].nil?
 
+  # add beer to list
+  @beers << @beer
+
+  erb :brew
+
+end
+
+# destroy the csv we're using for data.
+post '/clear' do
+  
 end
 
 get '/pour' do

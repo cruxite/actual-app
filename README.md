@@ -1,5 +1,5 @@
 # Dependencies
 
-'sassc'
+'csv'
 'sinatra'
 
