@@ -88,11 +88,11 @@
         <% @beers.each_with_index do |beer, i| %>
           <tr class="data">
             <td class="id">
-              <%= i %>
+              <%= i  + 1 %>
             </td>
 
             <td class="hoppy">
-              <% if beer[:hoppy] == true %>
+              <% if beer[:hoppy] == false %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -100,7 +100,7 @@
             </td>
 
             <td class="malty">
-              <% if beer[:malty] == true %>
+              <% if beer[:malty] == false %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -108,7 +108,7 @@
             </td>
 
             <td class="nitro"> 
-              <% if beer[:nitro] == true %>
+              <% if beer[:nitro] == false %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -116,7 +116,7 @@
             </td>
 
             <td class=weird>
-              <% if beer[:weird] == true %>
+              <% if beer[:weird] == false %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -124,36 +124,37 @@
             </td>
 
             <td class="abv">
-              <%= beer[:abv].present? ? beer[:abv] : "-" %>
+              <%= beer[:abv].nil? ? "-" : beer[:abv]  %>
             </td>
 
             <td class="beer-desc">
               <span class="beer-name">
-                <%= beer[:name].present? ? beer[:name] : "-" %>
+                <%= beer[:name].nil? ? "-" : beer[:name]%>
               </span>
               <span class="beer-type">
-                <%= beer[:desc].present? ? beer[:desc] : "-" %>
+                <%= beer[:desc].nil? ? "-" : beer[:desc] %>
               </span>
             </td>
 
             <td class="price-growler">
-              <%= beer[:growler].present? ? beer[:growler] : "-" %>
+              <%= beer[:growler].nil? ? "-" : beer[:growler] %>
             </td>
 
             <td class="price-taster">
-              <%= beer[:taster].present? ? beer[:taster] : "-" %>
+              <%= beer[:taster].nil? ? "-" : beer[:taster] %>
             </td>
 
             <td class="price-tenoz">
-              <%= beer[:tenoz].present? ? beer[:tenoz] : "-" %>
+              <%= beer[:tenoz].nil? ? "-" : beer[:tenoz]%>
             </td>
 
             <td class="price-pint">
-              <%= beer[:pint].present? ? beer[:pint] : "-" %>
+              <%= beer[:pint].nil? ?  "-" : beer[:pint] %>
             </td>
 
             <td class="tap-handle">
-              <i class="tap-square"></i>
+              <div class="tap-square" style="background: <%= "#{beer.tap1}" %>">
+              <div class="tap-triangle" style= "border-color: transparent transparent transparent <%= "#{beer.tap2}" %>"/>
             </td>
           </tr>
         <% end %>

@@ -6,7 +6,7 @@
   <body>
     <div class="container">
       <h1> Add a beer </h1>
-      <div class="main-body main-form"
+      <div class="main-body main-form">
         <form method="POST" action="/pour">
           <div>
             <label for="name">Beer Name</label>
@@ -61,8 +61,14 @@
           <div id="tap-color">
             <label for="tap">Tap Color</label>
             <input type="color" name="tap1" value="#ff0000">
-            <input type="color" name="tap2">
+            <input type="color" name="tap2" value="#0000ffff">
           </div>
+
+           <div>
+            <label for="pint">Total rows in table</label>
+            <input type="text", name="generations">
+          </div>
+
           <br/>
           <br/>
           <input type="submit">
