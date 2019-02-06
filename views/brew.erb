@@ -6,10 +6,11 @@
 <body>
   <div class="container">
     <div class="header">
-
       <span class="tagline">
         <h1> Actual Beer </h1>
-        <img src="<%= url('/actual.png') %>" />
+        <a href="<%= url '/pour'%>">
+          <img src="<%= url('/actual.png') %>" />
+        </a>
       </span>
 
     </div>
@@ -92,7 +93,7 @@
             </td>
 
             <td class="hoppy">
-              <% if beer[:hoppy] == false %>
+              <% if beer[:hoppy] == "false" %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -100,7 +101,7 @@
             </td>
 
             <td class="malty">
-              <% if beer[:malty] == false %>
+              <% if beer[:malty] == "false" %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -108,7 +109,7 @@
             </td>
 
             <td class="nitro"> 
-              <% if beer[:nitro] == false %>
+              <% if beer[:nitro] == "false" %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -116,7 +117,7 @@
             </td>
 
             <td class=weird>
-              <% if beer[:weird] == false %>
+              <% if beer[:weird] == "false" %>
                 <div class="dot-empty"></div>
               <% else %>
                 <div class="dot-filled"></div>
@@ -165,7 +166,7 @@
         <!-- generate empty table -->
          <tr class="data">
             <td class="id">
-              <%= y + 1 %>
+              <%= @beers.size + y + 1 %>
             </td>
             <td class="hoppy"></td>
             <td class="malty"></td>

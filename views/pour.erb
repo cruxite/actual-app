@@ -1,5 +1,6 @@
 <html>
     <head>
+      
       <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
       <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
     </head>
@@ -61,7 +62,8 @@
           <div id="tap-color">
             <label for="tap">Tap Color</label>
             <input type="color" name="tap1" value="#ff0000">
-            <input type="color" name="tap2" value="#0000ffff">
+            <label for="tap">Second Tap Color? </label>
+            <input type="checkbox", onChange="toggleTap()">
           </div>
 
            <div>
@@ -71,9 +73,27 @@
 
           <br/>
           <br/>
-          <input type="submit">
+          <input type="submit" value="Add Beer">
         </form>
+
+        <div>
+          <a href="<%= url '/clear' %>" onclick="confirm('you sure?')">Destroy Beer</a>
+        </div>
       </div>
     </div>
   </body>
+  <script>
+    function toggleTap() {
+      var tapbar = document.getElementById("tap-color");
+      if (tapbar.childElementCount < 5) {
+        var tap = document.createElement("INPUT");
+        tap.type = "color";
+        tap.name = "tap2";
+        tap.id = "tap2";
+        tapbar.appendChild(tap);
+      } else {
+        tapbar.removeChild(tapbar.lastChild);
+      }
+    }
+  </script>
 </html>
