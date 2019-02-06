@@ -38,6 +38,8 @@ end
 
 get '/' do
 
+  CSV.open(CSV_FILE, "a+")
+
   CSV.foreach(CSV_FILE) do |r|
     @beers << to_beer(r)
   end
@@ -94,7 +96,9 @@ end
 
 get '/clear' do
   # Nothing really to do but destroy the data within.
-  CSV.open(CSV_FILE, "w")
+  CSV.open(CSV_FILE, "w") do |cvs|
+    csv << ["name", "hoppy", "malty", "weird", "desc", "abv", "growler", "taster", "tenoz", "pint", "tap1", "tap2"]
+  end
   redirect '/pour'
 end
 
