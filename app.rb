@@ -90,7 +90,7 @@ post '/pour' do
     t << @beer
   end
 
-  erb :brew
+  erb :pour
 
 end
 
