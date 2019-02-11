@@ -1,7 +1,6 @@
 ## Installation
 
- + Install [ruby 2.6.1]
-(https://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releashttps://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releaed/ )
+ + Install [ruby 2.6.1](https://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releashttps://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releaed/)
  + Download these files using a .zip, and extract the files to C://Users/<YourUserNameHere>/Documents
  + Open windows command line ( easiest way to do that is hit the windows key and type cmd.)
  + type `cd C://Users/<YourUserNameHere>/Documents`
@@ -15,7 +14,7 @@
   + Open windows command line
   + Make sure you're in the directory where your project is, easiest way to check is type `dir` and it should have the files for the project in it
   + type `ruby app.rb`
-  + Open your browser of choice and naviagate to [localhost:4567/]
+  + Open your browser of choice and naviagate to [localhost:4567/](http://localhost:4567/)
   + You should be up and running!
 
 ## Use
