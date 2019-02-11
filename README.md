@@ -1,7 +1,7 @@
 ## Installation
 
  + Install [ruby 2.6.1](https://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releashttps://www.ruby-lang.org/en/news/2019/01/30/ruby-2-6-1-releaed/)
- + Download the files here on github using a .zip, and extract the files to C://Users/<YourUserNameHere>/Documents
+ + Download the files here on github using a .zip, and extract the files to `C://Users/<YourUserNameHere>/Documents`
  + Open windows command line ( easiest way to do that is hit the windows key and type cmd.)
  + type `cd C://Users/<YourUserNameHere>/Documents`
  + type `gem install sinatra`
